@@ -15,7 +15,7 @@ pipeline{
                         sh 'echo ${BUILDVERSION}'
                         println(C_PASS+" "+C_USER)
                         sh 'docker login -u preethipantangi -p ${C_PASS}'
-                        sh 'docker build -t preethipantangi/studentsurvey:${BUILDVERSION} .'
+                        sh 'docker build -t preethipantangi/studentsurvey:1.0 .'
                     }
                 }
             }
@@ -23,13 +23,13 @@ pipeline{
         stage("Pushing Image to DockerHub") {
             steps {
                 script {
-                    sh "docker push preethipantangi/studentsurvey:${BUILDVERSION}"
+                    sh "docker push preethipantangi/studentsurvey:1.0"
                 }
             }
         }
         stage("Deploying to Rancher") {
             steps {
-                sh 'kubectl set image deployment/studentsurvey studentsurvey=preethipantangi/studentsurvey:${BUILDVERSION} -n studentsurvey'
+                sh 'kubectl set image deployment/studentsurvey studentsurvey=preethipantangi/studentsurvey:1.0 -n studentsurvey'
             }
         }
     }
