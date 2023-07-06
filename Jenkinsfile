@@ -1,36 +1,30 @@
-pipeline{
+pipeline {
     agent any
     environment {
-        def BUILDVERSION = sh(script: "echo `date +%s`", returnStdout: true).trim()
+        DOCKERHUB_PASS = credentials('docker-pass')
     }
-
     stages {
-        stage("Building Student Survey Form page") {
+        stage("Build and create") {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'DOCKERHUB_PASS', passwordVariable: 'C_PASS', usernameVariable: 'C_USER')]) {
-                        checkout scm
-                        sh "rm -rf *.war"
-                        sh 'jar -cvf SurveyForm.war *'
-                        sh 'echo ${BUILDVERSION}'
-                        println(C_PASS+" "+C_USER)
-                        sh 'docker login -u preethipantangi -p ${C_PASS}'
-                        sh 'docker build -t preethipantangi/StudentSurveyForm:${BUILDVERSION} .'
-                    }
+                    checkout scm
+                    sh 'ls'
+                    sh "cd src/main/webapp && jar -cvf StudentSurveyForm.war *"
+                    DATE_TAG = java.time.LocalDate.now()
+                    DATETIME_TAG = java.time.LocalDateTime.now()
+                    sh "echo ${DATETIME_TAG}"
+                    sh "sudo docker login -u preethipantangi -p ${DOCKERHUB_PASS}"
+                    sh "sudo docker build -t preethipantangi/studentsurvey:${BUILD_TIMESTAMP} ."
                 }
             }
         }
-        stage("Pushing Image to DockerHub") {
+        stage("Pushing Image") {
             steps {
                 script {
-                    sh "docker push preethipantangi/StudentSurveyForm:${BUILDVERSION}"
+                    sh "sudo docker push preethipantangi/studentsurvey:${BUILD_TIMESTAMP}"
                 }
             }
         }
-        stage("Deploying to Rancher") {
-            steps {
-                sh 'kubectl set image deployment/StudentSurveyForm StudentSurveyForm=preethipantangi/StudentSurveyForm:${BUILDVERSION} -n StudentSurveyForm'
-            }
-        }
+        
     }
 }
