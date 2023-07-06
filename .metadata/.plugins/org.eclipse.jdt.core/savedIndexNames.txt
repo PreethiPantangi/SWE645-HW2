@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+C:\Preethi Pantangi\Courses\SWE645\Assignments\Assignment2\G01411973_Assignment2\.metadata\.plugins\org.eclipse.jdt.core
+925304964.index
+3413725848.index
+1865797976.index

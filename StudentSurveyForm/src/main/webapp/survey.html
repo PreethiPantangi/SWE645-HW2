@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Survey Form</title>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="navbar fixed-top">
+            <span class="navbar-brand">George Mason University</span>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div class="survey-content">
+            <h3 class="title">Survey Form</h3>
+        </div>
+        <div class="survey-form">
+            <form id="survey-form" onsubmit="return submitSurvey()">
+                <div class="mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-4">
+                            <label for="firstName" class="form-label">First Name <span class="required">*</span></label>
+                            <input type="text" class="form-control" id="firstName" placeholder="John" required
+                                autofocus>
+                        </div>
+                        <div class="col-4">
+                            <label for="lastName" class="form-label">Last Name <span class="required">*</span></label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Doe" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-4">
+                            <label for="email" class="form-label">Email <span class="required">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="john.doe@gmail.com"
+                                required>
+                        </div>
+                        <div class="col-4">
+                            <label for="mobile" class="form-label">Mobile Number <span class="required">*</span></label>
+                            <input type="text" class="form-control" id="mobile" placeholder="1234567890 " required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="surveyDate" class="form-label">Survey Date<span
+                                    class="required">*</span></label>
+                            <input type="date" class="form-control" id="surveyDate" required>
+                        </div>
+                        <div class="col-4">
+                            <label for="raffle" class="form-label">Raffle <span class="required">*</span></label>
+                            <input type="text" class="form-control" id="raffle" placeholder="1,2,3,4,..." required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-8">
+                            <label for="address" class="form-label">Address <span class="required">*</span></label>
+                            <input type="address" class="form-control" id="address" placeholder="123 Main St." required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="row align-items-start">
+                        <div class="col-4">
+                            <label for="city">City <span class="required">*</span></label>
+                            <input type="text" class="form-control" autocomplete="city" id="city" placeholder="Fairfax"
+                                required>
+                        </div>
+                        <div class="col-2">
+                            <label for="state">State <span class="required">*</span></label>
+                            <select id="state" autocomplete="state" class="form-control" required>
+                                <option value="">Choose...</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <label for="zipCode">Zip <span class="required">*</span></label>
+                            <input type="text" class="form-control" id="zipCode" placeholder="22030"
+                                autocomplete="zipCode" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Likelihood of recommending this school to other prospective students
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Very Likely</a>
+                            <a class="dropdown-item" href="#">Likely</a>
+                            <a class="dropdown-item" href="#">Unlikely</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>What did you like most about the campus? <span class="required">*</span></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Students" name="likedAspects[]"
+                            id="students">
+                        <label class="form-check-label" for="students">
+                            Students
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Location" name="likedAspects[]"
+                            id="location">
+                        <label class="form-check-label" for="location">
+                            Location
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Campus" name="likedAspects[]"
+                            id="campus">
+                        <label class="form-check-label" for="campus">
+                            Campus
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Atmosphere" name="likedAspects[]"
+                            id="atmosphere">
+                        <label class="form-check-label" for="atmosphere">
+                            Atmosphere
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Doorm Rooms" name="likedAspects[]"
+                            id="dorm_rooms">
+                        <label class="form-check-label" for="dorm_rooms">
+                            Dorm Rooms
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Sports" name="likedAspects[]"
+                            id="sports">
+                        <label class="form-check-label" for="sports">
+                            Sports
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>How did you get to know about the university? <span class="required">*</span></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="whoTold[]" value="friends" name="friends" id="friends">
+                        <label class="form-check-label" for="friends">
+                            Friends
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="whoTold[]" value="television" name="television" id="television">
+                        <label class="form-check-label" for="television">
+                            Television
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="whoTold[]" value="internet" name="internet" id="internet">
+                        <label class="form-check-label" for="internet">
+                            Internet
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="whoTold[]" value="other" name="other" id="other">
+                        <label class="form-check-label" for="other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="comments">Comments</label>
+                    <textarea class="form-control" placeholder="Comments" autocomplete="comments" id="comments"
+                        rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-4"><button type="submit" class="submit">Submit</button></div>
+                        <div class="col-4"><button type="reset" class="reset-button">Cancel</button></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <footer class="container py-3">
+            <span class="text-muted">Department of Computer Science</span>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function submitSurvey() {
+            var checkboxes = document.getElementsByName('likedAspects[]');
+            var checked = false;
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    checked = true;
+                    break;
+                }
+            }
+
+            var radioButtons = document.getElementsByName('whoTold[]');
+            var selected = false;
+
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    selected = true;
+                    break;
+                }
+            }
+            console.log(checked, selected);
+            if (!checked || !selected) {
+                if (!checked) {
+                    alert("Please select at least one response for 'What did you like most about the campus?'");
+                } else {
+                    alert("Please select at least one response for 'How did you get to know about the university?'");
+                }
+                return false;
+            } else {
+                document.getElementById("survey-form").reset();
+                alert("Thank you for your feedback.")
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    z-index: 9999;
+}
+
+nav {
+    background-color: #006633;
+    color: white;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    font-weight: bold;
+}
+
+.content {
+    overflow-y: auto;
+    height: calc(100vh - 140px);
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+}
+
+.survey-form {
+    padding: 10px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #006633;
+}
+
+.text-muted {
+    color: white !important;
+}
+
+button[type=submit] {
+    background: #006633;
+    border: 0;
+    padding: 10px 35px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.reset-button {
+    background: gray;
+    border: 0;
+    padding: 10px 35px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+button[type=submit]:hover {
+    background: #006633;
+}
+
+.required {
+  color: red;
+}
